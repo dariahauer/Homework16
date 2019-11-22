@@ -5,8 +5,8 @@ public class Test {
 
         try {
             CompetitionManagement sportControl = new CompetitionManagement();
-            sportControl.addPlayerString("stats.csv");
-        } catch (IOException | ArrayIndexOutOfBoundsException ex) {
+            sportControl.addPlayers("stats.csv");
+        } catch (IOException | ArrayIndexOutOfBoundsException| NumberFormatException ex) {
             System.err.println("Niepoprawne dane");
         }
 

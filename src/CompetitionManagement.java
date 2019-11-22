@@ -8,19 +8,20 @@ import java.util.Scanner;
 
 public class CompetitionManagement {
 
-    void addPlayerString(String fileName) throws IOException {
+    void addPlayers(String fileName) throws IOException {
         String userData;
         String[] userDataTable;
         List<Player> players = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
         System.out.println("Podaj wynik  gracza Imie Nazwisko wynik (lub stop): ");
         userData = scan.nextLine();
-        while (!(userData.contains("stop"))) {
+        while (!(userData.equals("stop"))) {
             userDataTable = userData.split(" ");
             players.add(new Player(userDataTable[0], userDataTable[1], Integer.valueOf(userDataTable[2])));
             System.out.println("Podaj wynik kolejnego gracza Imie Nazwisko wynik (lub stop): ");
             userData = scan.nextLine();
         }
+        scan.close();
         saveToFile(fileName, players);
         System.out.println("Dane posortowano i zapisano do pliku stats.csv.");
     }
@@ -35,5 +36,6 @@ public class CompetitionManagement {
             bfw.newLine();
         }
         bfw.close();
+        fileWriter.close();;
     }
 }
