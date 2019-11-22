@@ -9,7 +9,6 @@ public class Test {
         } catch (IOException | ArrayIndexOutOfBoundsException| NumberFormatException ex) {
             System.err.println("Niepoprawne dane");
         }
-
     }
 }
 
