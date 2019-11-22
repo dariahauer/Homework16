@@ -22,18 +22,18 @@ public class CompetitionManagement {
             userData = scan.nextLine();
         }
         saveToFile(fileName, players);
+        System.out.println("Dane posortowano i zapisano do pliku stats.csv.");
     }
 
     private void saveToFile(String fileName, List<Player> players) throws IOException {
         FileWriter fileWriter = new FileWriter(fileName);
         BufferedWriter bfw = new BufferedWriter(fileWriter);
         ResultComparator resultComparator = new ResultComparator();
-         Collections.sort(players, resultComparator);
+        Collections.sort(players, resultComparator);
         for (int i = 0; i < players.size(); i++) {
             bfw.write(players.get(i).getPlayerData());
             bfw.newLine();
         }
         bfw.close();
     }
-
 }
