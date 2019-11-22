@@ -7,7 +7,7 @@ public class Test {
                 CompetitionManagement sportControl = new CompetitionManagement();
                 sportControl.addPlayerString("stats.csv");
             }catch (IOException | ArrayIndexOutOfBoundsException ex){
-                System.out.println("Niepoprawne dane");
+                System.err.println("Niepoprawne dane");
             }
 
         }
